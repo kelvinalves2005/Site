@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Best | Animes</title>
+    <style>
+        body {
+            background-color: rgb(17, 15, 15);
+            color: white;
+            text-align: center;
+        }
+
+        .carrousel {
+            width: 1000px;
+            height: 600px;
+            overflow: hidden;
+            position: relative;
+            margin: auto;
+        }
+
+        .carrousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s;
+
+        }
+
+        .carrousel img.active {
+            opacity: 1;
+        }
+
+        video {
+            display: block;
+            margin: auto;
+            width: 1000px;
+        }
+
+        p {
+            max-width: 1000px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Best Animes</h1>
+    
+    <br><br><br>
+
+    <h1>Naruto</h1>
+
+    <div class="carrousel">
+        <img src="imagens/naruto.jpg" alt="Naruto" class="active">
+        <img src="imagens/naruto1.jpg" alt="Naruto">
+        <img src="imagens/naruto2.jpg" alt="Naruto">
+    </div><br>
+
+    <p><strong>Sinopse:</strong> Naruto (ナルト) é uma série de mangá escrita e ilustrada por Masashi Kishimoto, que conta a história de Naruto Uzumaki, um jovem ninja que constantemente procura por reconhecimento e sonha em se tornar Hokage, o ninja líder de sua vila.</p>
+    
+    <br><br>
+
+    <video controls autoplay loop>
+        <source src="videos/naruto.mp4" type="video/mp4">
+    </video>
+
+    <br><br><hr>
+
+    <br><br><br><br>
+
+    <h1>Demon Slayer</h1><br>
+
+    <div class="carrousel">
+        <img src="imagens/demon.png" alt="Demon" class="active">
+        <img src="imagens/demon1.jpg" alt="Demon">
+        <img src="imagens/demon2.jpg" alt="Demon">
+    </div><br>
+
+    <p><strong>Sinopse:</strong> Demon Slayer: Kimetsu no Yaiba é uma série de mangá e anime japonesa que conta a história de Tanjiro Kamado, um jovem que se torna um caçador de demônios para vingar sua família e salvar sua irmã.</p>
+    
+    <br><br>
+
+    <video controls autoplay loop>
+        <source src="videos/demon.mp4"type="video/mp4">
+    </video>
+
+    <br><br><br><br>
+
+    <hr><br>
+
+    <h1>Solo Leveling</h1><br>
+
+    <div class="carrousel">
+        <img src="imagens/solo.jpg" alt="Solo" class="active">
+        <img src="imagens/solo1.jpg" alt="Solo">
+        <img src="imagens/solo2.jpg" alt="Solo">
+    </div><br>   
+
+    <p><strong>Sinopse:</strong> Solo Leveling é uma história sobre um caçador humano que adquire habilidades mágicas e luta contra monstros para proteger a humanidade.</p>
+
+    <br><br>
+
+    <video controls autoplay loop>
+        <source src="videos/solo.mp4" type="video/mp4">
+    </video>
+
+    <script>
+        function startCarrousel(carrousel) {
+            let index = 0;
+            const imagens = carrousel.querySelectorAll("img");
+
+            function changeImagens() {
+                imagens[index].classList.remove("active");
+                index = (index + 1) % imagens.length;
+                imagens[index].classList.add("active");
+            }
+
+            setInterval(changeImagens, 4000);
+        }
+
+        document.querySelectorAll(".carrousel").forEach(startCarrousel);
+    </script>
+
+    <br><hr>
+    
+</body>
+</html>
